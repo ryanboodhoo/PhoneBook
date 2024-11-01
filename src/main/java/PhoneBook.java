@@ -2,6 +2,11 @@ import java.util.*;
 
 public class PhoneBook {
     private final Map<String, List<String>> phonebook;//map
+
+    public Map<String, List<String>> getPhonebook() {
+        return phonebook;
+    }
+
     public PhoneBook(Map<String, List<String>> map) {
         this.phonebook = map;
     }
@@ -30,27 +35,20 @@ public class PhoneBook {
         return phonebook.containsKey(name);
     }
     //Q5
-    public List<String> lookup(String name) {
-
-        List<String> numbers = new ArrayList<>(List.of());
-
-        for (Map.Entry<String, List<String>> i : phonebook.entrySet()) {
-            if (i.getKey().contains(name)) {
-                numbers.add(String.valueOf(i.getValue()));
-            }
+    public List<String> lookUp(String name) {
+            return phonebook.get(name);
         }
-        return numbers;
-    }
     //Q6
     public String reverseLookup(String phoneNumber) {
         String name = "";
-
+//looping though the Map ,map named phoneBook, any keys and values inside the Phonebook
         for (Map.Entry<String, List<String>> entry : phonebook.entrySet()) {
-            if (entry.getValue().contains(phoneNumber)) {
-                name = entry.getKey();
+            if (entry.getValue().contains(phoneNumber)) { // Check if the value contains the phone number
+                name = entry.getKey(); // If it does, set name to the corresponding key
             }
         }
         return name;
+        // return the key value of name
     }
 
     //Q7

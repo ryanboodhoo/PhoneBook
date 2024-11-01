@@ -21,7 +21,7 @@ public class Main {
         System.out.println("Has entry for Shawn: " + phoneBook.hasEntry("Shawn"));      // should print false
 
         // Q5
-        List<String> ryanNumbers = phoneBook.lookup("Ryan");
+        List<String> ryanNumbers = phoneBook.lookUp("Ryan");
         System.out.println("Phone numbers for Ryan: " + ryanNumbers);
 
         // Q6
